@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--Code by Divinector - divinectorweb.com-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animated background with pure css and html</title>
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<link href="style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+</head>
+<body>
+	<div class="animation-area">
+		<ul class="box-area">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+    </div>
+    <div class="bottom-area">
+	</div>
+	<!-- Swiper -->
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+		  <div class="swiper-slide" style="background-image:url(./images/sofie\ 1.jpg)"></div>
+		  <div class="swiper-slide" style="background-image:url(./images/sofie\ 2.JPG)"></div>
+		  <div class="swiper-slide" style="background-image:url(./images/sofie\ 3.JPG)"></div>
+		  <div class="swiper-slide" style="background-image:url(./images/sofie\ 4.JPG)"></div>
+		  <div class="swiper-slide" style="background-image:url(./images/sofie\ 5\ \(1\).JPG)"></div>
+		  <div class="swiper-slide" style="background-image:url(./images/sofie\ 5\ \(2\).JPG)"></div>
+		  <div class="swiper-slide" style="background-image:url(./images/sofie\ 5\ \(3\).JPG)"></div>
+		  <div class="swiper-slide" style="background-image:url(./images/sofie\ 5\ \(4\).JPG)"></div>
+		  <div class="swiper-slide" style="background-image:url(./images/sofie\ \(1\).jpg)"></div>
+		  <div class="swiper-slide" style="background-image:url(./images/sofie\ \(2\).jpg)"></div>
+		  <div class="swiper-slide" style="background-image:url(./images/sofie\ \(3\).jpg)"></div>
+		</div>
+		<!-- Add Pagination -->
+		<div class="swiper-pagination"></div>
+	</div>
+	<div class="container-card">
+		<div class="container-text">
+		<h3>HEY KAMU !!! Choise 1 This Card and Play The Music</h3>
+		</div>
+		<div class="container-cards">
+		<div class="card">
+				<div class="front">
+				<div class="neon-wrapper">
+					<span class="txt">With You</span>
+			  	</div>
+			  	</div>
+			  <div class="back">
+											<div id="image">
+												<img src="./images/poster 3.jpeg"/>
+											</div>
+								<div id="player">
+												<div id="songTitle">Photograph</div>
+												<audio id="track">
+													<source src="Photograph - Ed Sheeran.m4a" type="audio/mpeg" />
+												</audio>
+						  
+												<div id="player-container">
+													<div id="play-pause" class="play">Play</div>
+												</div>
+								</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="front">
+											<div class="neon-wrapper">
+													<span class="txt1">Calm Down</span>
+											</div>
+			</div>
+			<div class="back">
+											<div id="image">
+												<img src="./images/poster 1.jpeg"/>
+											</div>
+									<div id="player">
+											<div id="songTitle">Day & Night</div>
+											<audio id="track1">
+												<source src="Day & Night.mp3" type="audio/mpeg" />
+											</audio>
+							  
+											<div id="player-container">
+												<div id="play-pause1" class="play">Play</div>
+											</div>
+									</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="front">
+				<div class="neon-wrapper">
+					<span class="txt2">Letting Go</span>
+			   </div>
+			  </div>
+			  <div class="back">
+					<div id="image">
+						<img src="./images/poster 2.jpeg"/>
+					</div>
+					<div id="player">
+						<div id="songTitle">Im Letting Go</div>
+						<audio id="track2">
+							<source src="Pamungkas_Pamungkas_I_Love_You_But_Im_Letting_Go.m4a" type="audio/mpeg" />
+						</audio>
+						  
+						  <div id="player-container">
+							<div id="play-pause2" class="play">Play</div>
+						  </div>
+					</div>
+			  </div>
+		</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+	  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	  <script>
+		var swiper = new Swiper('.swiper-container', {
+		  effect: 'coverflow',
+		  grabCursor: true,
+		  centeredSlides: true,
+		  autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      		},
+		  slidesPerView: 'auto',
+		  coverflowEffect: {
+			rotate: 50,
+			stretch: 0,
+			depth: 100,
+			modifier: 1,
+			slideShadows: true,
+		  },
+		  pagination: {
+			el: '.swiper-pagination',
+		  },
+		});
+	  </script>
+	    <script >
+    		var track = document.getElementById('track');
+    		var track1 = document.getElementById('track1');
+    		var track2 = document.getElementById('track2');
+
+			var controlBtn = document.getElementById('play-pause');
+			var controlBtn1 = document.getElementById('play-pause1');
+			var controlBtn2 = document.getElementById('play-pause2');
+
+			function playPause() {
+				if (track.paused) {
+					track.play();
+					track2.pause();
+					track1.pause();
+					//controlBtn.textContent = "Pause";
+					controlBtn.className = "pause";
+					controlBtn1.className = "play";
+					controlBtn2.className = "play";
+				} else { 
+					track.pause();
+					//controlBtn.textContent = "Play";
+					controlBtn.className = "play";
+				}
+			}
+			function playPause1() {
+				if (track1.paused) {
+					track1.play();
+					track.pause();
+					track2.pause();
+					//controlBtn.textContent = "Pause";
+					controlBtn1.className = "pause";
+					controlBtn2.className = "play";
+					controlBtn.className = "play";
+				} else { 
+					track1.pause();
+					//controlBtn.textContent = "Play";
+					controlBtn1.className = "play";
+				}
+			}
+			function playPause2() {
+				if (track2.paused) {
+					track2.play();
+					track.pause();
+					track1.pause();
+					//controlBtn.textContent = "Pause";
+					controlBtn2.className = "pause";
+					controlBtn1.className = "play";
+					controlBtn.className = "play";
+				} else { 
+					track2.pause();
+					//controlBtn.textContent = "Play";
+					controlBtn2.className = "play";
+				}
+			}
+
+			controlBtn.addEventListener("click", playPause);
+			controlBtn1.addEventListener("click", playPause1);
+			controlBtn2.addEventListener("click", playPause2);
+			track.addEventListener("ended", function() {
+			controlBtn.className = "play";
+			});
+			track1.addEventListener("ended", function() {
+			controlBtn1.className = "play";
+			});
+			track2.addEventListener("ended", function() {
+			controlBtn2.className = "play";
+			});
+
+		</script>
+		
+</body>
+</html>
